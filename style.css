@@ -1,0 +1,89 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f7f8fa;
+  color: #111;
+  line-height: 1.5;
+}
+.app{
+    max-width:420px;
+    margin:0 auto;
+    padding:16px;
+}
+.app-header{
+    margin-bottom:24px;
+
+}
+.app-header h1{
+    font-size:1.5rem;
+    margin-bottom:8px;
+}
+.app-header p{
+    color:#555;
+    font-size:0.9rem;
+}
+.card{
+    background-color:#fff;
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:16px;
+}
+label{
+    display:box;
+    font-size:0.85rem;
+    margin-bottom:4px;
+    color:#444;
+
+}
+input,select{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+    font-size:1rem;
+}
+button{
+    width:100%;
+    padding:12px;
+    background-color: #1a8f5a;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    font-size:1rem;
+    cursor:pointer;
+}
+button:active{
+    transform: scale(0.98);
+}
+.result-card h2{
+    font-size:1.8rem;
+    margin-bottom:4px;
+}
+.result-card p{
+    font-size:0.9rem;
+    color:#666;
+}
+.trend,
+.staus{
+    font-size:0.85rem;
+    color:#444;
+    margin-top:16px;
+
+}
+.history h3{
+    font-size:1rem;
+    margin-bottom:8px;
+}
+.history ul{
+    list-style:none;
+}
+.history li{
+    font-size:0.85rem;
+    padding:8px 0;
+    border-bottom: 1px solid #eee;
+}

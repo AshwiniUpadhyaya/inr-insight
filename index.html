@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Currency Converter – INR</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- App will be built here -->
+<div class="app">
+    <header class="app-header">
+  <h1>Smart Currency Converter</h1>
+  <p>Convert global currencies to Indian Rupees (INR)</p>
+</header>
+<section class="card input-card">
+
+  <label for="amount">Amount</label>
+  <input 
+    type="number" 
+    id="amount" 
+    placeholder="Enter amount"
+  />
+
+  <label for="currency">From Currency</label>
+  <select id="currency">
+    <option value="USD">USD – United States</option>
+    <option value="EUR">EUR – Eurozone</option>
+    <option value="JPY">JPY – Japan</option>
+  </select>
+
+  <button id="convertBtn">Convert to INR</button>
+
+</section>
+
+<section class="card result-card">
+  <h2>₹ 0.00</h2>
+  <p>Converted amount will appear here</p>
+</section>
+
+<section class="trend">
+  <p>
+    Rate trend will be shown here after conversion.
+  </p>
+</section>
+
+<section class="status">
+  <p>Last updated: --</p>
+</section>
+
+<section class="history">
+  <h3>Recent Conversions</h3>
+  <ul>
+    <li>No conversions yet</li>
+  </ul>
+</section>
+  
+</div>
+
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
