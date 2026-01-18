@@ -47,10 +47,15 @@ input,select{
   border:1px solid #ccc;
     font-size:1rem;
 }
+select {
+  appearance: none;
+  background-color: #fff;
+}
+
 button{
     width:100%;
     padding:12px;
-    background-color: #1a8f5a;
+    background-color: #0c6b40;
     color:#fff;
     border:none;
     border-radius:10px;
@@ -60,6 +65,29 @@ button{
 button:active{
     transform: scale(0.98);
 }
+button {
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #157347; /* slightly darker green */
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+input:focus,
+button:focus {
+  outline: none;
+  border-color: #1a8f5a;
+  box-shadow: 0 0 0 2px rgba(26, 143, 90, 0.15);
+}
+
+.result-card h2 {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
 .result-card h2{
     font-size:1.8rem;
     margin-bottom:4px;
@@ -86,4 +114,26 @@ button:active{
     font-size:0.85rem;
     padding:8px 0;
     border-bottom: 1px solid #eee;
+}
+.history {
+  opacity: 0.85;
+}
+
+.history li {
+  transition: background-color 0.15s ease;
+}
+
+.history li:hover {
+  background-color: #f7f7f7;
+}
+.status {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.status.offline {
+  color: #b45309; /* amber tone */
+}
+.status.online {
+  color: #16a34a; /* green tone */
 }
