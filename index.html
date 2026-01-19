@@ -10,13 +10,101 @@
 </head>
 <body>
 
+  <nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">INR Insight</div>
+
+    <ul class="nav-links">
+      <li><a href="#convert">Convert</a></li>
+      <li><a href="#trend">Trends</a></li>
+      <li><a href="#history">History</a></li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Convert Global Currencies to INR</h1>
+    <p>
+      Get real-time exchange rates, track trends, and convert currencies
+      to Indian Rupees with clarity and confidence.
+    </p>
+
+    <a href="#convert" class="hero-btn">Start Converting</a>
+  </div>
+</section>
+
+
+
+<section class="services">
+  <h2 class="services-title">Our Features</h2>
+
+  <div class="services-row">
+    <div class="service-card card-1">
+      <div class="service-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 3V21H21V3H3ZM19 19H5V5H19V19Z" fill="#0b5e34"/>
+          <path d="M7 7H17V9H7V7ZM7 11H17V13H7V11ZM7 15H13V17H7V15Z" fill="#0b5e34"/>
+        </svg>
+      </div>
+      <h3>Rate Trends</h3>
+      <p>
+        Compare today’s exchange rate with yesterday to understand
+        currency movement clearly.
+      </p>
+    </div>
+
+    <div class="service-card card-2">
+      <div class="service-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#0b5e34"/>
+        </svg>
+      </div>
+      <h3>Real-Time Rates</h3>
+      <p>
+        Fetch live exchange rates with accurate timestamps for
+        reliable conversions.
+      </p>
+    </div>
+
+    <div class="service-card card-3">
+      <div class="service-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V11H13V17ZM13 9H11V7H13V9Z" fill="#0b5e34"/>
+        </svg>
+      </div>
+      <h3>Conversion History</h3>
+      <p>
+        Automatically store recent conversions so you never lose
+        track of your calculations.
+      </p>
+    </div>
+
+    <div class="service-card card-4">
+      <div class="service-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5Z" fill="#0b5e34"/>
+        </svg>
+      </div>
+      <h3>INR Focused</h3>
+      <p>
+        Designed specifically for Indian users converting
+        global currencies to INR.
+      </p>
+    </div>
+  </div>
+</section>
+
+
   <!-- App will be built here -->
 <div class="app">
     <header class="app-header">
   <h1>Smart Currency Converter</h1>
   <p>Convert global currencies to Indian Rupees (INR)</p>
 </header>
-<section class="card input-card">
+<section class="card input-card" id="convert">
 
   <label for="amount">Amount</label>
   <input 
@@ -38,7 +126,7 @@
   <p>Converted amount will appear here</p>
 </section>
 
-<section class="trend">
+<section class="trend" id="trend">
   <p>
     Rate trend will be shown here after conversion.
   </p>
@@ -48,7 +136,7 @@
   <p>Last updated: --</p>
 </section>
 
-<section class="history">
+<section class="history" id="history">
   <h3>Recent Conversions</h3>
   <ul>
     <li>No conversions yet</li>
@@ -56,6 +144,9 @@
 </section>
   
 </div>
+
+
+
 
 
   <!-- Scripts -->

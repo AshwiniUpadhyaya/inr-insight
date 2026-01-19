@@ -1,3 +1,233 @@
+/* ===== NAVBAR STYLES ===== */
+
+.navbar {
+  width: 100%;
+  background-color: #0b5e34; /* dark green */
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #e6f2ec;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffffff;
+}
+
+
+
+/* ===== HERO SECTION ===== */
+
+.hero {
+  background: linear-gradient(135deg, #0b5e34, #128c52);
+  color: #ffffff;
+  padding: 80px 16px;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e6f2ec;
+  margin-bottom: 32px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #0b5e34;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== SERVICES / FEATURES (PRO STYLE) ===== */
+
+.services {
+  background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%);
+  padding: 80px 16px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(11, 94, 52, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.services-title {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.services-row {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.service-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f9f9f9 100%);
+  color: #111;
+  padding: 32px 28px;
+  border-radius: 20px;
+  min-width: 260px;
+  max-width: 300px;
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #e6f2ec 0%, #d1e7dd 100%);
+  border-radius: 50%;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #0b5e34;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+/* Unique styles for each card to avoid uniformity */
+.card-1 {
+  background: linear-gradient(145deg, #ffffff 0%, #f0f8f4 100%);
+  margin-top: 10px;
+}
+
+.card-1:hover {
+  background: linear-gradient(145deg, #f0f8f4 0%, #e6f2ec 100%);
+}
+
+.card-2 {
+  background: linear-gradient(145deg, #ffffff 0%, #f4f9f0 100%);
+  margin-top: -5px;
+}
+
+.card-2:hover {
+  background: linear-gradient(145deg, #f4f9f0 0%, #e8f5e8 100%);
+}
+
+.card-3 {
+  background: linear-gradient(145deg, #ffffff 0%, #f9f4f0 100%);
+  margin-top: 15px;
+}
+
+.card-3:hover {
+  background: linear-gradient(145deg, #f9f4f0 0%, #f5e8e8 100%);
+}
+
+.card-4 {
+  background: linear-gradient(145deg, #ffffff 0%, #f0f4f9 100%);
+  margin-top: 0;
+}
+
+.card-4:hover {
+  background: linear-gradient(145deg, #f0f4f9 0%, #e8f0f5 100%);
+}
+
+/* Horizontal scroll hint (like real websites) */
+.services-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.services-row::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+}
+
 *{
     margin:0;
     padding:0;
