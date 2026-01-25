@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exchange Rate Trends – INR Insight</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">INR Insight</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Convert</a></li>
+     <li><a href="trends.html">Trends</a></li>
+
+     <li><a href="history.html">History</a></li>
+
+    </ul>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="app">
+
+  <header class="app-header">
+    <h1>Exchange Rate Trends</h1>
+    <p>Understand how currencies move against INR</p>
+  </header>
+
+  <section class="trend-section">
+    <h2>Latest Trend</h2>
+    <p class="trend-subtitle">
+      Based on your last saved conversion
+    </p>
+
+    <div class="trend-card">
+      <p class="trend-text">
+        No trend data available yet. Convert a currency first.
+      </p>
+    </div>
+    <div class="trend-chart">
+  <canvas id="rateChart"></canvas>
+</div>
+
+
+    <div class="trend-note">
+      Trends update automatically when you convert a currency.
+    </div>
+  </section>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

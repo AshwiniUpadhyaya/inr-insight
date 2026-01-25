@@ -41,13 +41,21 @@ const resultText = document.querySelector(".result-card h2");
 
 
 
-const trendText = document.querySelector(".trend p");
+const trendText = document.querySelector(".trend-text") || null;
+
+
 
 const statusText = document.querySelector(".status p");
 
-const historyList = document.querySelector(".history ul");
+const historyList =
+  document.querySelector(".history ul") ||
+  document.querySelector(".history-list") ||
+  null;
+
 
 function populateCurrencyDropdown() {
+  if (!currencySelect) return; // ✅ guard
+
   currencies.forEach(currency => {
     const option = document.createElement("option");
     option.value = currency.code;
@@ -56,9 +64,9 @@ function populateCurrencyDropdown() {
   });
 }
 
-// Call it once when page loads
+// Call only if dropdown exists
 populateCurrencyDropdown();
-
+if (convertBtn){
 convertBtn.addEventListener("click", function () {
   const amount = amountInput.value;
   const currency = currencySelect.value;
@@ -94,28 +102,31 @@ statusText.textContent = `Last updated: ${timeString}`;
       // 🔹 Get yesterday's rate from localStorage
       const lastRate = localStorage.getItem(`${currency}_INR_RATE`);
 
-     if (lastRate) {
+if (lastRate) {
   const difference = todayRate - lastRate;
 
-  // 🔹 COLOR based on trend
-  trendText.style.color = difference > 0 ? "#c0392b" : "#1a8f5a";
+  if (trendText) {
+    trendText.style.color = difference > 0 ? "#c0392b" : "#1a8f5a";
 
-  if (difference > 0) {
+    if (difference > 0) {
+      trendText.textContent =
+        `1 ${currency} was ₹${Number(lastRate).toFixed(2)} earlier. Today: ₹${todayRate.toFixed(2)} ↑ (+${difference.toFixed(2)})`;
+    } else if (difference < 0) {
+      trendText.textContent =
+        `1 ${currency} was ₹${Number(lastRate).toFixed(2)} earlier. Today: ₹${todayRate.toFixed(2)} ↓ (${difference.toFixed(2)})`;
+    } else {
+      trendText.textContent =
+        `No change from last rate. Still ₹${todayRate.toFixed(2)}.`;
+      trendText.style.color = "#555";
+    }
+  }
+
+} else {
+  if (trendText) {
     trendText.textContent =
-      `1 ${currency} was ₹${Number(lastRate).toFixed(2)} earlier. Today: ₹${todayRate.toFixed(2)} ↑ (+${difference.toFixed(2)})`;
-  } else if (difference < 0) {
-    trendText.textContent =
-      `1 ${currency} was ₹${Number(lastRate).toFixed(2)} earlier. Today: ₹${todayRate.toFixed(2)} ↓ (${difference.toFixed(2)})`;
-  } else {
-    trendText.textContent =
-      `No change from last rate. Still ₹${todayRate.toFixed(2)}.`;
-    trendText.style.color = "#555"; // neutral color
+      "No previous data available to show trend.";
   }
 }
- else {
-        trendText.textContent =
-          "No previous data available to show trend.";
-      }
 
       // 🔹 Save today's rate for next time
       localStorage.setItem(`${currency}_INR_RATE`, todayRate);
@@ -145,14 +156,20 @@ updateHistoryUI(history);
       console.error(error);
     });
 });
+}
 
-setInterval(() => {
-  if (amountInput.value !== "") {
-    convertBtn.click();
-  }
-}, 300000); // 5 minutes
+if (amountInput && convertBtn) {
+  setInterval(() => {
+    if (amountInput.value !== "") {
+      convertBtn.click();
+    }
+  }, 300000);
+}
+
 
 function updateHistoryUI(history) {
+  if (!historyList) return;
+
   historyList.innerHTML = "";
 
   if (history.length === 0) {
@@ -167,5 +184,48 @@ function updateHistoryUI(history) {
   });
 }
 
+
 const savedHistory = JSON.parse(localStorage.getItem("conversionHistory")) || [];
 updateHistoryUI(savedHistory);
+
+const chartCanvas = document.getElementById("rateChart");
+
+if (chartCanvas) {
+  const ctx = chartCanvas.getContext("2d");
+
+  // Temporary demo data (we’ll improve this later)
+  const labels = ["Day 1", "Day 2", "Day 3", "Day 4", "Today"];
+  const rates = [82.9, 83.1, 83.0, 83.2, 83.15];
+
+  new Chart(ctx, {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "USD → INR",
+          data: rates,
+          borderColor: "#0b5e34",
+          backgroundColor: "rgba(11, 94, 52, 0.1)",
+          tension: 0.4,
+          fill: true,
+          pointRadius: 4
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        y: {
+          ticks: {
+            callback: value => "₹" + value
+          }
+        }
+      }
+    }
+  });
+}
+

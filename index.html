@@ -16,8 +16,10 @@
 
     <ul class="nav-links">
       <li><a href="#convert">Convert</a></li>
-      <li><a href="#trend">Trends</a></li>
-      <li><a href="#history">History</a></li>
+      <li><a href="trends.html">Trends</a></li>
+
+      <li><a href="history.html">History</a></li>
+
       
     </ul>
   </div>
@@ -104,50 +106,28 @@
   <h1>Smart Currency Converter</h1>
   <p>Convert global currencies to Indian Rupees (INR)</p>
 </header>
-<section class="card input-card" id="convert">
+<div class="converter-wrapper">
 
-  <label for="amount">Amount</label>
-  <input 
-    type="number" 
-    id="amount" 
-    placeholder="Enter amount"
-  />
+  <section class="card input-card" id="convert">
+    <label for="amount">Amount</label>
+    <input type="number" id="amount" placeholder="Enter amount" />
 
-  <label for="currency">From Currency</label>
-<select id="currency"></select>
+    <label for="currency">From Currency</label>
+    <select id="currency"></select>
 
+    <button id="convertBtn">Convert to INR</button>
+  </section>
 
-  <button id="convertBtn">Convert to INR</button>
+  <section class="card result-card">
+    <h2>₹ 0.00</h2>
+    <p>Converted amount will appear here</p>
+  </section>
 
-</section>
-
-<section class="card result-card">
-  <h2>₹ 0.00</h2>
-  <p>Converted amount will appear here</p>
-</section>
-
-<section class="trend" id="trend">
-  <p>
-    Rate trend will be shown here after conversion.
-  </p>
-</section>
-
-<section class="status">
-  <p>Last updated: --</p>
-</section>
-
-<section class="history" id="history">
-  <h3>Recent Conversions</h3>
-  <ul>
-    <li>No conversions yet</li>
-  </ul>
-</section>
-  
 </div>
 
 
 
-
+</div>
 
   <!-- Scripts -->
   <script src="script.js"></script>

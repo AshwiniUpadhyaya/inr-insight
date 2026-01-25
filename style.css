@@ -239,11 +239,20 @@ body {
   color: #111;
   line-height: 1.5;
 }
-.app{
-    max-width:420px;
-    margin:0 auto;
-    padding:16px;
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px;
 }
+
+/* Desktop enhancement */
+@media (min-width: 900px) {
+  .app {
+    max-width: 640px;
+    padding: 24px;
+  }
+}
+
 .app-header{
     margin-bottom:24px;
 
@@ -366,4 +375,91 @@ button:focus {
 }
 .status.online {
   color: #16a34a; /* green tone */
+}
+
+/* ===== TRENDS SECTION ===== */
+
+.trend-section {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 20px;
+  margin: 32px 0;
+  scroll-margin-top: 90px; /* navbar offset */
+}
+
+.trend-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.trend-subtitle {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.trend-card {
+  background: linear-gradient(135deg, #f0f8f4, #e6f2ec);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.trend-card h4 {
+  font-size: 0.9rem;
+  color: #0b5e34;
+  margin-bottom: 6px;
+}
+
+.trend-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.trend-note {
+  font-size: 0.75rem;
+  color: #777;
+}
+.nav-links a.active {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 4px;
+}
+.history-section {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.history-list li {
+  font-size: 0.9rem;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+.history ul {
+  list-style: none;
+  padding-left: 0;
+}
+.input-card {
+  padding: 24px;
+}
+
+@media (min-width: 900px) {
+  .input-card {
+    padding: 32px;
+  }
+}
+@media (min-width: 900px) {
+  .app-header h1 {
+    font-size: 1.9rem;
+  }
+
+  .result-card h2 {
+    font-size: 2.4rem;
+  }
+
+  button {
+    font-size: 1.05rem;
+    padding: 14px;
+  }
 }
